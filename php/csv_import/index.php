@@ -137,7 +137,7 @@ class Import
 <html lang="en">
 
 <head>
-    <title>Kelnik Test Import</title>
+    <title>CSV Test Import</title>
     <script src="asset/js/jquery.min.js"></script>
     <link rel="stylesheet" href="asset/css/bootstrap.min.css" />
     <script src="asset/js/bootstrap.min.js"></script>
