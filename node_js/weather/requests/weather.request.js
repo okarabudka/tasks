@@ -6,6 +6,9 @@ module.exports = async function(city = '') {
   }
 
   const KEY = process.env.OPENWEATHER_API_KEY
+  if (!KEY) {
+    throw new Error('Set OPENWEATHER_API_KEY')
+  }
   const uri = 'http://api.openweathermap.org/data/2.5/weather'
 
   const options = {
