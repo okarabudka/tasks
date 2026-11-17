@@ -3,12 +3,7 @@
 class Import
 {
 
-    protected static $_settings = [
-        'servername' => 'db.example.com',
-        'username' => '',
-        'password' => '',
-        'db' => '',
-    ];
+    protected static $_settings = [];
 
     public static $_data = [];
     protected static $connection;
@@ -118,10 +113,10 @@ class Import
     {
         try {
             self::$connection = mysqli_connect(
-                self::$_settings['servername'],
-                self::$_settings['username'],
-                self::$_settings['password'],
-                self::$_settings['db']
+                getenv('DB_HOST') ?: 'localhost',
+                getenv('DB_USER') ?: 'root',
+                getenv('DB_PASSWORD') ?: '',
+                getenv('DB_NAME') ?: 'csv_import'
             );
         } catch (exception $e) {
             echo "Connection failed: " . $e->getMessage();
